@@ -43,4 +43,18 @@ body {
   background:black;
   position: absolute;
   top:50%;
+  transform-origin: 100%;
+  transition-timing-function: ease-in-out;;
+  transition-duration: .5s;
+}
+
+.digital {
+  position: absolute;
+  top: 70%;
+  width: 100px;
+  height: 20px;
+  background-color: white;
+  margin-left: 30%;
+  color: black;
+  z-index: 1000;
 }
