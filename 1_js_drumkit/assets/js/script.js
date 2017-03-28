@@ -3,7 +3,7 @@ window.onload = function(){
   var drumKeys = document.querySelectorAll('.key');
 
   // assign a transitionEnd event listener to each key to know when to remove playing class
-  drumKeys.forEach((element) => element.addEventListener('transitionend', endOfTransitionHandler));
+  drumKeys.forEach(element => element.addEventListener('transitionend', endOfTransitionHandler));
 
   // assign listener to set what happens when a key is pressed
   document.addEventListener("keydown", onPressHandler);
