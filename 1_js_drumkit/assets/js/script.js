@@ -15,13 +15,13 @@ window.onload = function(){
         sound = document.querySelector(`audio[data-key="${event.keyCode}"]`);
 
     // reset the duration incase sound is already playing
-    if(sound.duration > 0) sound.currentTime = 0;
+    if(sound && sound.duration > 0) sound.currentTime = 0;
 
     // add new class to animate pressed button
-    key.classList.add('playing');
+    if(key) key.classList.add('playing');
 
     // play the audiofile
-    sound.play();
+    if(sound) sound.play();
   }
 
   // function fires when css transition property ends
