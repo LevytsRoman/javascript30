@@ -1,19 +1,24 @@
 window.onload = function(){
-  // need to get time
   var digital = document.querySelector('.digital'),
       hourHand = document.querySelector('.hour-hand'),
       minuteHand = document.querySelector('.min-hand'),
       secondHand = document.querySelector('.second-hand');
 
   function prettyTime(m,h,s){
-    var min = m.toString().length === 1 ? `0${m}` : `${m}`,
-        hr = h.toString().length === 1 ? `0${h}` : `${h}`,
-        sec = s.toString().length === 1 ? `0${s}` : `${s}`;
+    var hr = convertTime(h),
+        min = convertTime(m),
+        sec = convertTime(s);
 
     return `${hr}:${min}:${sec}`;
   }
 
-  setInterval(updateTime, 1000);
+  function convertTime(unit){
+    return untit.toString().length === 1 ? `0${untit}` : `${untit}`
+  }
+
+  function rotate(el, deg){
+    el.style.transform = `rotate(${deg}deg)`;
+  }
 
   function updateTime(){
     var currentTime = new Date,
@@ -23,13 +28,13 @@ window.onload = function(){
         hourDeg = (hours * 360)/12 + 90,
         minDeg = (minutes * 360)/60 + 90,
         secDeg = (seconds * 360)/60 + 90;
-    digital.innerHTML = prettyTime(hours, minutes, seconds);
 
-        // set css transform: rotate(deg); for each of the above
-    hourHand.style.transform = `rotate(${hourDeg}deg)`;
-    minuteHand.style.transform = `rotate(${minDeg}deg)`;
-    secondHand.style.transform = `rotate(${secDeg}deg)`;
+    digital.innerHTML = prettyTime(hours, minutes, seconds);
+    // set css transform: rotate(deg); for each of the above
+    rotate(hourHand, hourDeg);
+    rotate(minuteHand, minDeg);
+    rotate(secHand, secDeg);
   }
 
-  // make a function to fire every second and update all of the above
+  setInterval(updateTime, 1000);
 }
