@@ -1,3 +1,9 @@
+:root {
+  --color: yellow;
+  --spacing: 10;
+  --blur: 10;
+}
+
 body {
   text-align: center;
 }
@@ -10,10 +16,21 @@ body {
   font-size: 50px;
 }
 
+
 .controls {
   margin-bottom: 50px;
 }
 
 input {
   width:100px;
+}
+
+img {
+  padding: calc(var(--spacing)*1px);
+  background-color: var(--color);
+  filter: blur(calc(var(--blur)*1px));
+}
+
+.hl {
+  color: var(--color);
 }
