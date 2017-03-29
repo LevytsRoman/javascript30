@@ -4,7 +4,7 @@ window.onload = function(){
       minHand = document.querySelector('.min-hand'),
       secHand = document.querySelector('.second-hand');
 
-  function prettyTime(m,h,s){
+  function prettyTime(h,m,s){
     var hr = convertTime(h),
         min = convertTime(m),
         sec = convertTime(s);
@@ -17,7 +17,13 @@ window.onload = function(){
   }
 
   function rotate(el, deg){
-    el.style.transform = `rotate(${deg}deg)`;
+    if(deg === 90){
+      el.style.transitionDuration = '0s';
+      el.style.transform = `rotate(${deg}deg)`;
+    }else {
+      el.style.transitionDuration = '1s';
+      el.style.transform = `rotate(${deg}deg)`;
+    }
   }
 
   function updateTime(){

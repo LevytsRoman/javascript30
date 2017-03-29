@@ -44,7 +44,7 @@ body {
   position: absolute;
   top:50%;
   transform-origin: 100%;
-  transition-timing-function: ease-in-out;;
+  transition-timing-function: ease-in-out;
   transition-duration: 1s;
 }
 
