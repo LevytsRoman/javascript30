@@ -1,8 +1,8 @@
 window.onload = function(){
   var digital = document.querySelector('.digital'),
       hourHand = document.querySelector('.hour-hand'),
-      minuteHand = document.querySelector('.min-hand'),
-      secondHand = document.querySelector('.second-hand');
+      minHand = document.querySelector('.min-hand'),
+      secHand = document.querySelector('.second-hand');
 
   function prettyTime(m,h,s){
     var hr = convertTime(h),
@@ -13,7 +13,7 @@ window.onload = function(){
   }
 
   function convertTime(unit){
-    return untit.toString().length === 1 ? `0${untit}` : `${untit}`
+    return unit.toString().length === 1 ? `0${unit}` : `${unit}`
   }
 
   function rotate(el, deg){
@@ -32,7 +32,7 @@ window.onload = function(){
     digital.innerHTML = prettyTime(hours, minutes, seconds);
     // set css transform: rotate(deg); for each of the above
     rotate(hourHand, hourDeg);
-    rotate(minuteHand, minDeg);
+    rotate(minHand, minDeg);
     rotate(secHand, secDeg);
   }
 
