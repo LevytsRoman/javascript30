@@ -18,13 +18,13 @@ body {
 .clock {
   width: 30rem;
   height: 30rem;
-  border:20px solid white;
+  border:5px solid white;
   border-radius:50%;
   margin:50px auto;
   position: relative;
   padding:2rem;
   box-shadow:
-    0 0 0 4px rgba(0,0,0,0.1),
+    0 0 0 2px rgba(0,0,0,0.2),
     inset 0 0 0 3px #EFEFEF,
     inset 0 0 10px black,
     0 0 10px rgba(0,0,0,0.2);
@@ -39,22 +39,26 @@ body {
 
 .hand {
   width:50%;
-  height:6px;
+  height:2px;
   background:black;
   position: absolute;
   top:50%;
   transform-origin: 100%;
   transition-timing-function: ease-in-out;;
-  transition-duration: .5s;
+  transition-duration: 1s;
 }
 
 .digital {
   position: absolute;
   top: 70%;
-  width: 100px;
+  width: 50%;
   height: 20px;
   background-color: white;
-  margin-left: 30%;
+  border-radius: 15px;
+  margin-left: 25%;
   color: black;
-  z-index: 1000;
+  z-index: -1000;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    0 0 10px rgba(0,0,0,0.2);
 }
